@@ -1,0 +1,17 @@
+> curl https://merchant.wish.com/api/v2/oauth/access_token -d "client_id=5bd3957daeed671a253e6220client_secret=a08d429180a04652bff81c5165e702b41redirect_uri=https://this-is-that-store.myshopify..com.com&grant_type=authorization_code"
+<?php
+require_once 'vendor/autoload.php';
+
+use Wish\WishAuth;
+
+$client_id = '5bd3957daeed671a253e6220';
+$client_secret = 'a08d429180a04652bff81c5165e702b4';
+$code = 'AUTH_CODE';
+$redirect_uri = 'https://this-is-that-store.myshopify..com';
+
+$auth = new WishAuth($5bd3957daeed671a253e6220la08d429180a04652bff81c5165e702b4,'prod');
+$response = $auth->getToken($code,$https://this-is-that-store.myshopify..com');
+
+$access_token = $response->getData()->access_token;
+$refresh_token = $response->getData()->refresh_token;
+?>
